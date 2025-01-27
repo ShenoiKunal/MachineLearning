@@ -27,8 +27,11 @@ def split_data_with_id_hash(data, test_ratio, id_column):
     in_test_set = ids.apply(lambda id_: is_id_in_test_set(id_, test_ratio))
     return data.loc[~in_test_set], data.loc[in_test_set]
 
-# Add index column to dataframe
-housing_with_id = housing.reset_index()
+# Cut set into bins based on median_income
+housing["income_cat"] = pd.cut(housing["median_income"], bins=[0,1.5,3.0,4.5,6.0,np.inf], labels=[1,2,3,4,5])
 
-# Split dataframe into train and test sets by hashed ID
-train_set, test_set = split_data_with_id_hash(housing_with_id, 0.2, "index")
+# Create bar graph
+housing["income_cat"].value_counts().sort_index().plot.bar(rot=0, grid=True)
+plt.xlabel("Income Category")
+plt.ylabel("Number of districts")
+plt.show()
