@@ -50,7 +50,7 @@ Split the data uniformly into 5 categories based on median income using pd cuts.
 housing["income_cat"] = pd.qcut(housing["median_income"], q=5, labels=[1, 2, 3, 4, 5])
 ```
 #### Plot
-![[Pasted image 20250201212537.png|600]]
+![Number of Districts vs Income Category](Resources/Number of Districts vs Income Category.png)
 
 ### Question 3
 Plot the test dataset to visualize the geographical information
@@ -64,7 +64,7 @@ strat_test_set.plot(kind="scatter", x="longitude", y="latitude", grid=True,
 ```
 
 #### Plot
-![[Pasted image 20250201212843.png|600]]
+![Geographical Information based on Population highlighted by Median House Value](Resources/Density Map of Median House Value.png)
 
 ### Question 4
 Remove entries from the dataset that do not align with the pattern and plot.
@@ -81,17 +81,22 @@ cleaned_housing.plot(kind="scatter", x="median_income", y="median_house_value", 
 ```
 
 #### Plots
+####
 **RAW**
-![[Pasted image 20250201213145.png|600]]
+
+![Median House Value vs Median Income Raw](Resources/Median House Value vs Median Income Raw.png)
+
 **CLEANED**
-![[Pasted image 20250201213200.png|600]]
+
+![Median House Value vs Median Income Cleaned](Resources/Median House Value vs Median Income Cleaned.png)
+
 
 ### Question 5
 Use the Linear Regression model fit to the training set to predict the training values and calculate RMSE
 
 #### Code
 ```python
-lin_reg.fit(train_imputed, train_labels)  
+lin_reg.fit(train_imputed, train_labels)
 train_predictions = lin_reg.predict(train_imputed)
 
 rmse = root_mean_squared_error(train_labels, train_predictions)
