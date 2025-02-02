@@ -50,7 +50,7 @@ Split the data uniformly into 5 categories based on median income using pd cuts.
 housing["income_cat"] = pd.qcut(housing["median_income"], q=5, labels=[1, 2, 3, 4, 5])
 ```
 #### Plot
-![Number of Districts vs Income Category](./Resources/Number of Districts vs Income Category.png)
+![Number of Districts vs Income Category](/Homework 1/Resources/Number of Districts vs Income Category.png)
 
 ### Question 3
 Plot the test dataset to visualize the geographical information
@@ -64,7 +64,7 @@ strat_test_set.plot(kind="scatter", x="longitude", y="latitude", grid=True,
 ```
 
 #### Plot
-![Geographical Information based on Population highlighted by Median House Value](./Resources/Density Map of Median House Value.png)
+![Geographical Information based on Population highlighted by Median House Value](/Homework 1/Resources/Density Map of Median House Value.png)
 
 ### Question 4
 Remove entries from the dataset that do not align with the pattern and plot.
@@ -84,11 +84,11 @@ cleaned_housing.plot(kind="scatter", x="median_income", y="median_house_value", 
 ####
 **RAW**
 
-![Median House Value vs Median Income Raw](./Resources/Median House Value vs Median Income Raw.png)
+![Median House Value vs Median Income Raw](/Homework 1/Resources/Median House Value vs Median Income Raw.png)
 
 **CLEANED**
 
-![Median House Value vs Median Income Cleaned](./Resources/Median House Value vs Median Income Cleaned.png)
+![Median House Value vs Median Income Cleaned](/Homework 1/Resources/Median House Value vs Median Income Cleaned.png)
 
 
 ### Question 5
