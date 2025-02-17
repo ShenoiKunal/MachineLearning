@@ -1,0 +1,3 @@
+﻿jupyter
+scikit-learn
+nltk
